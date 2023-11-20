@@ -1,17 +1,21 @@
 import ImageApiService from './api.js';
+import LoadMoreBtn from './btn.js';
 
 const form = document.getElementById('search-form');
 const gallery = document.querySelector('.gallery');
 
 const imageApiService = new ImageApiService();
-console.log(imageApiService);
+const loadMoreBtn = new LoadMoreBtn({
+  selector: '.load-more',
+  isHidden: true,
+});
 
 form.addEventListener('submit', onSubmit);
+loadMoreBtn.button.addEventListener('click', fetchHits);
 
 function onSubmit(event) {
   event.preventDefault();
   const form = event.target;
-  console.log(form);
   const value = form.elements.searchQuery.value.trim();
   imageApiService.search = value;
   if (value === '') {
@@ -20,10 +24,12 @@ function onSubmit(event) {
   }
   imageApiService.resetPage();
   clearList();
+  loadMoreBtn.show();
   fetchHits().finally(() => form.reset());
 }
 
 async function fetchHits() {
+  loadMoreBtn.disable();
   try {
     const hits = await imageApiService.getImage();
     console.log('hits:', hits);
@@ -33,6 +39,7 @@ async function fetchHits() {
       );
     const markup = hits.reduce((markup, hit) => createMarkup(hit) + markup, '');
     appendToList(markup);
+    loadMoreBtn.enable();
   } catch (err) {
     onError(err);
   }
