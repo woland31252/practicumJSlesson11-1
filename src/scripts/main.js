@@ -1,8 +1,8 @@
 import ImageApiService from './api.js';
 import LoadMoreBtn from './btn.js';
 import Notiflix from 'notiflix';
-// import SimpleLightbox from "simplelightbox";
-// import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 const form = document.getElementById('search-form');
 const gallery = document.querySelector('.gallery');
@@ -53,6 +53,7 @@ async function fetchHits() {
 
 function appendToList(markup) {
   gallery.insertAdjacentHTML('beforeend', markup);
+  lightbox.refresh();
 }
 
 function createMarkup({
@@ -101,3 +102,5 @@ function onError(err) {
   );
   // appendToList('<p>Sorry, there are no images matching your search query. Please try again.</p>');
 }
+
+const lightbox = new SimpleLightbox('.gallery a');
