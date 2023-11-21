@@ -1,5 +1,8 @@
 import ImageApiService from './api.js';
 import LoadMoreBtn from './btn.js';
+import Notiflix from 'notiflix';
+// import SimpleLightbox from "simplelightbox";
+// import "simplelightbox/dist/simple-lightbox.min.css";
 
 const form = document.getElementById('search-form');
 const gallery = document.querySelector('.gallery');
@@ -19,7 +22,7 @@ function onSubmit(event) {
   const value = form.elements.searchQuery.value.trim();
   imageApiService.search = value;
   if (value === '') {
-    console.log('Please formulate a request');
+    Notiflix.Notify.info('Please formulate a request');
     return;
   }
   imageApiService.resetPage();
@@ -31,12 +34,15 @@ function onSubmit(event) {
 async function fetchHits() {
   loadMoreBtn.disable();
   try {
-    const hits = await imageApiService.getImage();
-    console.log('hits:', hits);
-    if (hits.length === 0)
-      throw new Error(
-        'Sorry, there are no images matching your search query. Please try again.'
-      );
+    const data = await imageApiService.getImage();
+    const hits = data.hits
+    // const hits = await imageApiService.getImage();
+    // console.log('hits:', hits);
+    if (hits.length === 0) {
+      throw new Error('Data not found.');
+    } else {
+      Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
+      };
     const markup = hits.reduce((markup, hit) => createMarkup(hit) + markup, '');
     appendToList(markup);
     loadMoreBtn.enable();
@@ -90,5 +96,8 @@ function clearList() {
 function onError(err) {
   console.error(err);
   loadMoreBtn.hide();
-  appendToList('<p>Articles not found</p>');
+  Notiflix.Notify.failure(
+    'Sorry, there are no images matching your search query. Please try again'
+  );
+  // appendToList('<p>Sorry, there are no images matching your search query. Please try again.</p>');
 }

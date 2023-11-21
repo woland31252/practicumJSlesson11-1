@@ -10,11 +10,11 @@ export default class ImageApiService {
     this.search = '';
   }
   async getImage() {
-    const URL = `${ENDPOINT}?key=${KEY}&q=${this.search}&${this.page}&${param}`;
+    const URL = `${ENDPOINT}?key=${KEY}&q=${this.search}&page=${this.page}&${param}`;
     const response = await axios.get(URL);
     this.nextPage();
 
-    return response.data.hits;
+    return response.data;
   }
   nextPage() {
     this.page += 1;
