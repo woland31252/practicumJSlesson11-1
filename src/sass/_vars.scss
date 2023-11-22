@@ -1,26 +1,13 @@
 :root {
     --accent-color: #2196F3;
-    --border-color: #F5F4FA;
-    --bg-gradient: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
-    --button-color: #2196F3;
-    --command-backgroud: #F5F4FA;
-    --contacts-link: #757575;
-    --first-font-size: 16px;
-    --footer-adresscolor: #FFFFFF;
-    --footer-background: #2F303A;
-    --header-link: #212121;
-    --hero-backgroud: #2F303A;
-    --label-color: #757575;
+    --button-color: rgba(45, 45, 233, 0.731);
+    --disabled-btncolor: #c1c1c1;;
     --card-color: #e6ecb4;
-    --logo-black: #000000;
-    --logo-blue: #2196F3;
-    --logo-white: #FFFFFF;
+    --search-bacgr: hwb(207 14% 14%);
+    --font-btncolor: #FFFFFF;
     --main-color: #dad5d5;
-    --modal-background: #FFFFFF;
-    --second-title-color: #212121;
-    --second-font: 'Raleway', 'sans-serif';
-    --second-font-size: 14px;
-    --thrid-title-color: #212121;
-    --text-color: #504e4e;
+    --font-loadmore-btn: 30px;
+    --font-input: 24px;
+    --font-search-btn: 18px;
     --typical-lh: 1.19;
 }
