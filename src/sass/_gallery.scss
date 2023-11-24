@@ -7,14 +7,20 @@
 }
 
 .photo-card {
+    overflow: hidden;
     background-color: var(--card-color);
     border-radius: 4px;
     flex: 0 1 calc(1/4*100% - 15px);
 }
 
+// img {
+//     // max-width: 293px;
+//     // max-height: 200px;
+//     object-fit: none;
+// }
+
 .info {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     padding: 3px 5px;
 }
