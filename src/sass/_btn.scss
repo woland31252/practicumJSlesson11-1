@@ -1,6 +1,7 @@
 .load-more {
-    margin: 0 auto;
-    margin-top: 50px;
+    margin: 50 auto;
+    // margin-top: 50px;
+    // margin-bottom: 50px;
     display: block;
     border-radius: 15px;
     padding: 10px 20px;
@@ -8,10 +9,14 @@
     border: none;
     background-color: var(--button-color);
     color: var(--font-btncolor);
+    transition-property: background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .load-more:hover {
     background-color: var(--accent-color);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .load-more:disabled {

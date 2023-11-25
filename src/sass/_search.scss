@@ -17,7 +17,7 @@ input {
 }
 
 
-form > button {
+.search-form > button {
     border-radius: 0 5px 5px 0;
     position: absolute;
     top: 4px;
@@ -28,8 +28,13 @@ form > button {
     background: var(--button-color);
 }
 
-form > button:hover {
+.search-form > button:hover {
     background: var(--accent-color);
+}
+
+
+.search-form>input:hover {
+    border-color: var(--accent-color);
 }
 
 .material-symbols-outlined {
