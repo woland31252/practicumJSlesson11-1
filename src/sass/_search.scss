@@ -16,16 +16,12 @@ input {
     outline: none;
 }
 
-// input:hover {
-//     border-color: var(--accent-color);
-// }
 
 form > button {
     border-radius: 0 5px 5px 0;
-    // font-size: var(--font-search-btn);
     position: absolute;
     top: 4px;
-    right: 450px;
+    right: 482px;
     width: 42px;
     height: 42px;
     border: none;
@@ -36,14 +32,8 @@ form > button:hover {
     background: var(--accent-color);
 }
 
-// form > button::before {
-//     content: "\e8b6";
-//     font-family: 'Material+Symbols+Outlined';
-//     font-size: 16px;
-//     color: #f9f0da;
-// }
 .material-symbols-outlined {
-    color: bisque;
+    color: var(--font-btncolor);
     font-size: 28px;
     padding-top: 2px;
 }
