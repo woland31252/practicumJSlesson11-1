@@ -1,3 +1,4 @@
+
 .search-form {
     display: flex;
     justify-content: center;
@@ -28,13 +29,25 @@ input {
     background: var(--button-color);
 }
 
-.search-form > button:hover {
-    background: var(--accent-color);
-}
+// .search-form > button:hover {
+//     background: var(--accent-color);
+// }
 
 
-.search-form>input:hover {
-    border-color: var(--accent-color);
+// .search-form>input:hover {
+//     border-color: var(--accent-color);
+// }
+
+.search-form:hover {
+    & button {
+        background: var(--accent-color);
+    }
+    & .material-symbols-outlined {
+        color: var(--accent-fonts-color);
+    }
+    & input {
+        border-color: var(--accent-color);
+    }
 }
 
 .material-symbols-outlined {

@@ -36,8 +36,6 @@ async function fetchHits() {
   try {
     const data = await imageApiService.getImage();
     const hits = data.hits
-    // const hits = await imageApiService.getImage();
-    // console.log('hits:', hits);
     if (hits.length === 0) {
       throw new Error('Data not found.');
     } else {
@@ -100,7 +98,6 @@ function onError(err) {
   Notiflix.Notify.failure(
     'Sorry, there are no images matching your search query. Please try again'
   );
-  // appendToList('<p>Sorry, there are no images matching your search query. Please try again.</p>');
 }
 
 const lightbox = new SimpleLightbox('.gallery a');

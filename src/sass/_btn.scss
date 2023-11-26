@@ -1,7 +1,5 @@
 .load-more {
     margin: 50 auto;
-    // margin-top: 50px;
-    // margin-bottom: 50px;
     display: block;
     border-radius: 15px;
     padding: 10px 20px;
@@ -17,6 +15,7 @@
 .load-more:hover {
     background-color: var(--accent-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    color: var(--accent-fonts-color);
 }
 
 .load-more:disabled {
