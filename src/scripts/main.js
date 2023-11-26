@@ -4,6 +4,13 @@ import Notiflix from 'notiflix';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
+Notiflix.Notify.init({
+  width: '600px',
+  position: 'center-top',
+  distance: '220px',
+  fontSize: '36px',
+});
+
 const form = document.getElementById('search-form');
 const gallery = document.querySelector('.gallery');
 
@@ -39,7 +46,12 @@ async function fetchHits() {
     if (hits.length === 0) {
       throw new Error('Data not found.');
     } else {
-      Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
+      Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`, {
+        width: '300px',
+        position: 'right-top',
+        distance: '60px',
+        fontSize: '16px',
+      });
       };
     const markup = hits.reduce((markup, hit) => createMarkup(hit) + markup, '');
     appendToList(markup);
