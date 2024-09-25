@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 11</title>
+    <title>practicumJSlesson11-1</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,8 +15,22 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
- 
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-     <include src="./partials/search.html"></include>
+
+    <div class="container-form">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit">
+          <span class="material-symbols-outlined"> search </span>
+        </button>
+      </form>
+    </div>
+
+    <div class="gallery"></div>
+    <button type="button" class="load-more" disabled>Load more</button>
   </body>
 </html>

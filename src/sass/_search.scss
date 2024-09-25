@@ -1,57 +1,45 @@
-
 .search-form {
-    display: flex;
-    justify-content: center;
-    padding: 4px 0;
-    background-color: var(--search-bacgr);
-    position: relative;
+  width: 343px;
+  padding: 4px 0;
+  margin: 0 auto;
+  position: relative;
 }
 
 input {
-    width: 300px;
-    height: 42px;
-    border-radius: 5px;
-    border: 3px solid var(--button-color);
-    padding: 5px 10px;
-    font-size: var(--font-input);
-    outline: none;
+  width: 300px;
+  height: 42px;
+  border-radius: 5px;
+  border: 3px solid var(--button-color);
+  padding: 5px 10px;
+  font-size: var(--font-input);
+  outline: none;
 }
-
 
 .search-form > button {
-    border-radius: 0 5px 5px 0;
-    position: absolute;
-    top: 4px;
-    right: 482px;
-    width: 42px;
-    height: 42px;
-    border: none;
-    background: var(--button-color);
+  border-radius: 0 5px 5px 0;
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: var(--button-color);
 }
 
-// .search-form > button:hover {
-//     background: var(--accent-color);
-// }
-
-
-// .search-form>input:hover {
-//     border-color: var(--accent-color);
-// }
-
 .search-form:hover {
-    & button {
-        background: var(--accent-color);
-    }
-    & .material-symbols-outlined {
-        color: var(--accent-fonts-color);
-    }
-    & input {
-        border-color: var(--accent-color);
-    }
+  & button {
+    background: var(--accent-color);
+  }
+  & .material-symbols-outlined {
+    color: var(--accent-fonts-color);
+  }
+  & input {
+    border-color: var(--accent-color);
+  }
 }
 
 .material-symbols-outlined {
-    color: var(--font-btncolor);
-    font-size: 28px;
-    padding-top: 2px;
+  color: var(--font-btncolor);
+  font-size: 28px;
+  padding-top: 2px;
 }
